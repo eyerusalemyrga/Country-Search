@@ -1,29 +1,40 @@
-.countries-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+body {
+    background-color: silver;
+    font-family: sans-serif;
+    margin: 20px;
+    color: black;
 }
-.country-card {
-    border: 1px solid #ccc;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-}
-.country-card img {
-    width: 100px;
-    height: auto;
-    transition: transform 0.3s;
-}
-.country-card img:hover {
-    transform: scale(1.2);
-}
+
 .search-container {
     margin-bottom: 20px;
-    text-align: center;
 }
-.search-container input,
-.search-container select {
+
+#searchInput {
+    /* display: flex; */
     padding: 8px;
     margin-right: 10px;
+}
+
+#continentSelect {
+    padding: 12px;
+}
+
+.country-card {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+
+}
+
+.country-card img {
+    width: 50px;
+    margin-right: 10px;
+}
+#countryList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minMax(300px, 1fr));
+    justify-content: center;
+
 }

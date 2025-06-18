@@ -1,0 +1,1 @@
+The code on country explorer where each country is displayed with its flag , name,popution,region and language.One can search the country by name or narrow down the search by filtering by continent or region

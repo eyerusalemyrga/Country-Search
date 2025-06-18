@@ -1,5 +1,5 @@
 const apiUrl = 'https://restcountries.com/v3.1/all?fields=name,flags,languages,population,capital,region';
-const countriesContainer = document.getElementById('countriesContainer');
+const countryListContainer = document.getElementById('countryList');
 const searchInput = document.getElementById('searchInput');
 const continentSelect = document.getElementById('continentSelect');
 let allCountries = [];
@@ -10,36 +10,32 @@ async function fetchCountries() {
         allCountries = await response.json();
         displayCountries(allCountries);
     } catch (error) {
-        countriesContainer.textContent = 'Failed to load countries.';
-        console.error(error);
+        countryListContainer.innerHTML = '<p>Error fetching data</p>';
+        console.error('Error fetching data:', error);
     }
 }
 
 function displayCountries(countries) {
-    countriesContainer.innerHTML = '';
+    countryListContainer.innerHTML = '';
     countries.forEach(country => {
         const card = document.createElement('div');
         card.classList.add('country-card');
 
-        const flag = document.createElement('img');
-        flag.src = country.flags.svg;
-        flag.alt = `${country.name.common} flag`;
+        const flagImg = document.createElement('img');
+        flagImg.src = country.flags.png; 
+        flagImg.alt = `${country.name.common} flag`;
+        card.appendChild(flagImg);
 
-        const name = document.createElement('h3');
-        name.textContent = country.name.common;
-
-        const population = document.createElement('p');
-        population.textContent = `Population: ${country.population}`;
-        const languages = document.createElement('p');
-        const languagesArray = Object.values(country.languages);
-        languages.textContent = `Languages: ${languagesArray.join(', ')}`;
-
-        card.appendChild(flag);
-        card.appendChild(name);
-        card.appendChild(population);
-        card.appendChild(languages);
-
-        countriesContainer.appendChild(card);
+        const infoDiv = document.createElement('div');
+        infoDiv.innerHTML = `
+            <h3>${country.name.common}</h3>
+            <p>Capital: ${country.capital ? country.capital[0] : 'N/A'}</p>
+            <p>Population: ${country.population}</p>
+            <p>Region: ${country.region}</p>
+            <p>Languages: ${Object.values(country.languages || {}).join(', ')}</p>
+        `;
+        card.appendChild(infoDiv);
+        countryListContainer.appendChild(card);
     });
 }
 
@@ -47,13 +43,13 @@ function filterCountries() {
     const searchTerm = searchInput.value.toLowerCase();
     const selectedContinent = continentSelect.value;
 
-    const filteredCountries = allCountries.filter(country => {
+    const filtered = allCountries.filter(country => {
         const nameMatch = country.name.common.toLowerCase().includes(searchTerm);
         const continentMatch = selectedContinent === '' || country.region === selectedContinent;
         return nameMatch && continentMatch;
     });
 
-    displayCountries(filteredCountries);
+    displayCountries(filtered);
 }
 
 searchInput.addEventListener('input', filterCountries);

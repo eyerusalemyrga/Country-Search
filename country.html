@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country-search</title>
+    <title>Country Search</title>
     <link rel="stylesheet" href="country.css">
 </head>
 <body>
-    <h1>Country Explorer</h1>
+    <h1>Country Search</h1>
+
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search by country name">
+        <input type="text" id="searchInput" placeholder="Search by country name...">
         <select id="continentSelect">
-         <option value="">All continents</option>
-         <option value="Africa">Africa</option>
-         <option value="Americas">America</option>
-         <option value="Asia">Asia</option>
-         <option value="Europe">Europe</option>
-         <option value="Oceania">Oceania</option>
+            <option value="">All Continents</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
         </select>
     </div>
-    <div id="countriesContainer" class="countries-container">
-    </div>
-     <script src="script.js"></script>
+
+    <div id="countryList">
+        </div>
+
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>

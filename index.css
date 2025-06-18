@@ -1,0 +1,97 @@
+body{
+    overflow-x: hidden;
+    
+}
+.landing-page{
+    position: absolute;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://i0.wp.com/visitbalitour.com/wp-content/uploads/2015/07/bali-tour.jpg?fit=1500%2C834&ssl=1);
+    width: 100vw;
+    height: 110vh;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    
+}
+.landing-page h1{
+    color: aliceblue;
+    left: 35%;
+    top: 30%;
+    font-size: 4rem;
+    position: relative;
+    
+
+    
+}
+.landing-page p {
+    color: aliceblue;
+    left: 36%;
+    top: 25%;
+    font-size: 1.5rem;
+    position: relative;
+
+
+}
+button{
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    padding: 12px;
+    left: 40%;
+    top: 30%;
+    width: 20%;
+    height: 6%;
+    font-size: 2rem;
+    color: rgb(100, 100, 219);
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
+}
+
+@media only screen and (max-width:600){
+    body{
+        overflow-x: hidden;
+    }
+   .landing-page{
+    position: absolute;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://i0.wp.com/visitbalitour.com/wp-content/uploads/2015/07/bali-tour.jpg?fit=1500%2C834&ssl=1);
+    width: 50%;
+   
+    
+} 
+
+.landing-page h1{
+    color: aliceblue;
+    top: 12px;
+    font-size: 1rem;
+    right: 12%;
+    width: 3;
+    position: absolute;
+    
+
+    
+}
+
+.landing-page p {
+    color: aliceblue;
+    left: 17%;
+    top: 25%;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 43%;
+
+}
+
+button{
+    position: relative;
+    padding: 12px;
+    left: 43%;
+    top: 30%;
+    width: 20%;
+    height: 6%;
+    font-size: 4px;
+    color: rgb(100, 100, 219);
+    border-radius: 10px;
+}
+}
+
